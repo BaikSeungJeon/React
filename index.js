@@ -1,6 +1,13 @@
 const express = require('express')
 const app = express()
 const port = 5000
+const bodyParser = require('body-parser');
+const {User} = require('./models/User');
+
+// application/x-www-form-urlencoded 분석해서 가지고 오게끔
+app.use(bodyParser.urlencoded({extended: true}));
+// application/json을 분석해서 가지고 오게끔 
+app.use(bodyParser.json());
 
 const mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://tmdwjs:qwert12345@cluster0.wcno7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
@@ -8,8 +15,19 @@ mongoose.connect('mongodb+srv://tmdwjs:qwert12345@cluster0.wcno7.mongodb.net/myF
 }).then(() => console.log('MongoDB Connected...'))
     .catch(err => console.log(err))
     
-app.get('/', (req, res) => {
-  res.send('Hello World! test1111')
+app.get('/', (req, res) => res.send('Hello World! test1111'))
+
+app.post('/register', (req, res) => {
+  // 회원 가입 할 때 필요한 정보들을 client에서 가져오면 그것들을 데이터 베이스에 넣어줌
+
+  const user = new User(req.body);
+
+  user.save((err, userInfo) => {
+    if (err) return res.json({success : false, err})
+    return res.status(200).json({
+      success : true
+    })
+  })
 })
 
 app.listen(port, () => {
