@@ -21,7 +21,7 @@ mongoose.connect(config.mongoURI, {
     
 app.get('/', (req, res) => res.send('Hello World! test1111 테스트 중입니다'))
 
-app.post('/api/user/register', (req, res) => {
+app.post('/api/users/register', (req, res) => {
   // 회원 가입 할 때 필요한 정보들을 client에서 가져오면 그것들을 데이터 베이스에 넣어줌
 
   const user = new User(req.body);
@@ -35,7 +35,7 @@ app.post('/api/user/register', (req, res) => {
 })
 
 // 210728
-app.post('/api/user/login', (req, res) => {
+app.post('/api/users/login', (req, res) => {
 
 
   // 1. 데이터베이스 안에서 요청된 이메일 찾기
@@ -83,7 +83,7 @@ app.get('/api/users/auth', auth, (req, res) => {
   })
 })
 
-app.get('/api/users/logout', auth, (res, req) => {
+app.get('/api/users/logout', auth, (req, res) => {
   User.findOneAndUpdate({_id: req.user._id},
     { token: ""}
     ,(err, user) => {
