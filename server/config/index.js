@@ -3,9 +3,9 @@ const app = express()
 const port = 5000
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const config = require('./config/key');
-const {auth} = require('./middleware/auth')
-const {User} = require('./models/User');
+const config = require('./key');
+const {auth} = require('../middleware/auth')
+const {User} = require('../models/User');
 
 // application/x-www-form-urlencoded 분석해서 가지고 오게끔
 app.use(bodyParser.urlencoded({extended: true}));
