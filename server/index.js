@@ -3,9 +3,9 @@ const app = express()
 const port = 5000
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const config = require('./key');
-const {auth} = require('../middleware/auth')
-const {User} = require('../models/User');
+const config = require('./config/key');
+const {auth} = require('./middleware/auth')
+const {User} = require('./models/User');
 
 // application/x-www-form-urlencoded 분석해서 가지고 오게끔
 app.use(bodyParser.urlencoded({extended: true}));
@@ -20,6 +20,11 @@ mongoose.connect(config.mongoURI, {
     .catch(err => console.log(err))
     
 app.get('/', (req, res) => res.send('Hello World! test1111 테스트 중입니다'))
+
+// 210729
+app.get('/api/hello', (req, res) => {
+  res.send("안녕하세요")
+})
 
 app.post('/api/users/register', (req, res) => {
   // 회원 가입 할 때 필요한 정보들을 client에서 가져오면 그것들을 데이터 베이스에 넣어줌
