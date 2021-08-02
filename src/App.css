@@ -1,5 +1,30 @@
-.App {
+ .App {
   text-align: center;
+}
+
+body {
+  font-family: 'nanumsquare';
+}
+
+.modal {
+  margin-top: 20px;
+  padding: 20px;
+  background: #aaa;
+}
+
+.navBar {
+  background-color: #000;
+  width: 100%;
+  display: flex;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px 0;
+}
+.list {
+  margin-top: 30px;
+  text-align: left;
+  padding: 0 20px;
 }
 
 .App-logo {
