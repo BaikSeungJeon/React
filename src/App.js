@@ -11,7 +11,13 @@ function App() {
   let [글제목, 글제목변경] = useState(['강남 맛집', '홍대 맛집', '이태원 맛집']);
   // [사용 프레임워크 , state 정정해주는 함수]
   let [따봉, 업] = useState(0);
-  let post = '첫 포스팅';
+  // let [modal, modal변경] = useState(false);
+  let [modal, modal열기] = useState(false);
+
+
+
+
+  // let post = '첫 포스팅';
 
 
   // state 복사본 만들어서 배열 [0] 수정하기
@@ -57,15 +63,36 @@ function App() {
         <p> 2021년 8월 4일 작성 </p>
         <hr/>
       </div>
+      <button onClick={ () => { modal열기(!modal) } }> modal </button>
 
-      <div className="modal">
+      {/* {
+        modal === true
+        ? <Modal/>
+        : null
+      } */}
+      
+      {
+        modal === true
+        ? <Modal/>
+        : null
+      }
+
+
+
+
+    </div>
+  );
+}
+
+function Modal() {
+  return (
+    <div className="modal">
         <h2>제목</h2>
         <p>날짜</p>
         <p>내용</p>
 
       </div>
-    </div>
-  );
+  )
 }
 
 export default App;
