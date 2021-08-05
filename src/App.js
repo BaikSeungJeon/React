@@ -1,8 +1,12 @@
-import logo from './logo.svg';
+/* eslint-disable */
+import React, {useState} from 'react';
 import { Navbar, Container, Nav, NavDropdown, Button} from 'react-bootstrap';
 import './App.css';
+import Data from './data.js';
 
 function App() {
+
+  let [shoes, shoesChange] = useState(Data);
   return (
     <div className="App">
       <Navbar bg="light" expand="lg">
@@ -26,7 +30,7 @@ function App() {
 </Navbar>
 
 <div className="jumbotron">
-    <h1>Hello, world!</h1>
+    <h1>런닝화 50% SALE!</h1>
     <p>
       This is a simple hero unit, a simple jumbotron-style component for calling
       extra attention to geatured content or information.
@@ -34,9 +38,41 @@ function App() {
     <p>
       <Button variant="primary">Learn more</Button>
     </p>
+    
+</div>
+
+<div className="container">
+  <div className="row">
+    <Col></Col>
+    <Col></Col>
+    <Col></Col>
+  </div>
 </div>
     </div>
   );
 }
 
+function Col(){
+  return (
+    <>
+      <div className="col-md-4">
+        <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
+        <h4>{shoes[0].title}</h4>
+        <p>{shoes[0].content}</p>
+      </div>
+
+      <div className="col-md-4">
+        <img src="https://codingapple1.github.io/shop/shoes2.jpg" width="100%" />
+        <h4>{shoes[1].title}</h4>
+        <p>{shoes[1].content}</p>
+      </div>
+
+      <div className="col-md-4">
+        <img src="https://codingapple1.github.io/shop/shoes3.jpg" width="100%" />
+        <h4>{shoes[2].title}</h4>
+        <p>{shoes[2].content}</p>
+      </div>
+    </>
+  )
+}
 export default App;

@@ -8,9 +8,10 @@
 }
 
 .jumbotron {
-  background-color: #eee;
+  background-color: #ddd;
   padding: 50px 0;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
