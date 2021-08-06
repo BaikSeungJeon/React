@@ -68,8 +68,6 @@ function App() {
     </div>
   );
 }
-
-
 // component 하나 더 추가해서 
 function Card(props){ // 상위 컴포넌트에 있는 걸 가지고 와야 하니, props로 가지고 오기
   return (
