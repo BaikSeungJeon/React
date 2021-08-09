@@ -60,7 +60,7 @@ function App() {
       </Route>
 
       <Route path="/detail">
-        <Detail  />
+        <Detail shoes={shoes} />
       </Route>
 
       <Route path="/:id">
