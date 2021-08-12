@@ -8,14 +8,10 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Detail from './Detail.js';
 import axios from 'axios';
 
-
-
-
-
-
 function App() {
 
   let [shoes, shoesChange] = useState(Data);
+  let [Info, InfoChange] = useState([10, 11, 12]);
 
   return (
     <div className="App">
@@ -63,9 +59,17 @@ function App() {
               </div>
 
               <button className="btn btn-primary" onClick={() => {
+
+
+                axios.post('서버URL', { id : 'black', pw : '1234'}).then()
+
+
+                // 로딩 중이라는 UI 띄움
+
                 axios.get('https://codingapple1.github.io/shop/data2.json')
-                .then((result)=>{ // 성공하면
+                .then((result)=>{ // 성공하면 로딩 중이라는 UI 지움
                   console.log(result.data)
+                  shoesChange([...shoes, ...result.data]);
                 })
                 .catch(()=>{ // 실패하면
                   console.log("실패했어요")
@@ -78,7 +82,7 @@ function App() {
       </Route>
 
       <Route path="/detail/:id">
-        <Detail shoes={shoes} />
+        <Detail shoes={shoes} Info = {Info} InfoChange = {InfoChange} />
       </Route>
 
       <Route path="/:id">

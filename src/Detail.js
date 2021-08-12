@@ -1,5 +1,6 @@
 /* eslint-disable*/
 
+import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
@@ -21,6 +22,11 @@ function Detail(props) {
 
 
     useEffect(() => {
+
+        axios.get()
+
+
+
         // 2초 후에 alert 창 안 보이게 해주셈
         let timer = setTimeout(() => {alertChange(false)}, 2000)
         return () => { clearTimeout(timer)}
@@ -41,7 +47,7 @@ function Detail(props) {
         <div className="container">
 
             <box>
-                <box2 className="red"> Detail </box2>
+                <box2 className="red"> 검색 </box2>
             </box>
 
 
@@ -73,7 +79,14 @@ function Detail(props) {
                 <h4 className="pt-5">{props.shoes[id].title}</h4>
                 <p>{props.shoes[id].content}</p>
                 <p>{props.shoes[id].price}</p>
-                <button className="btn btn-danger">주문하기</button> 
+
+                <Info Info = {props.Info}/>
+
+                <button className="btn btn-danger" onClick = {() => {
+                    props.InfoChange([9, 10, 11])
+                }}>주문하기</button> 
+
+
                 <button className="btn btn-danger" onClick={()=>{
                     history.goBack();
                     // history.push('/'); 얘는 경로 지정
@@ -84,5 +97,13 @@ function Detail(props) {
         </div> 
     )
 }
+
+
+function Info(props){
+    return(
+        <p> 재고 : {props.Info[0]} </p>
+    )
+}
+
 
 export default Detail
