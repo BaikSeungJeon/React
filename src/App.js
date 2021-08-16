@@ -47,9 +47,21 @@ function App() {
                 This is a simple hero unit, a simple jumbotron-style component for calling
                 extra attention to geatured content or information.
               </p>
+              <p className="lorem">
+                안녕하세요. 이 쇼핑몰은 런닝화를 판매하는 전문 브랜드입니다. <br></br>
+                사실 런닝화 판매 쇼핑몰을 리액트 연습 겸 만든 사이트입니다.<br></br>
+                <br></br>
+                
+                공부 방향은 개념과 기본 흐름만 잡고 넘어가기 위함이라<br></br>
+                완성도에 큰 비중을 두지 않았습니다.<br></br>
+                사용 기술 : HTML5, CSS3, React
+              </p>
               <p>
                 <Button variant="primary">Learn more</Button>
               </p>
+            </div>
+
+
               <div className="container">
                 <div className="row">
                   { // { } 안에는 map 함수
@@ -81,7 +93,6 @@ function App() {
                 }}>더보기</button>
 
               </div>
-            </div>
           </div>
         </Route>
 
@@ -94,7 +105,7 @@ function App() {
         </Route>
 
         <Route path="/:id">
-          <div>해결</div>
+          <div> DETAIL </div>
         </Route>
       </Switch>
       
