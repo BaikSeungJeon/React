@@ -13,6 +13,8 @@ import Cart from './Cart.js';
 
 function App() {
 
+  const repository = "/study-react-shoppingmall-build";
+
   let [shoes, shoesChange] = useState(Data);
   let [Info, InfoChange] = useState([10, 11, 12]);
 
@@ -24,8 +26,8 @@ function App() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as = {Link} to="/"> Home </Nav.Link>
-              <Nav.Link as = {Link} to="/detail/"> Detail </Nav.Link>
+              <Nav.Link as = {Link} to={repository+"/"}> Home </Nav.Link>
+              <Nav.Link as = {Link} to={repository+"/detail/"}> Detail </Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
