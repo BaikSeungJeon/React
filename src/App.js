@@ -1,8 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
 import { Nav, Container, Row, Col } from 'react-bootstrap'
+import {useState} from 'react'
+import './App.css';
+
 
 function App() {
+
+  let [product] = useState();
+
   return (
     <div className="App">
       <Nav className='nav' variant="pills" defaultActiveKey="/iPhone">
@@ -10,10 +14,10 @@ function App() {
           <Nav.Link href="/iPhone">iPhone</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-1">iPad</Nav.Link>
+          <Nav.Link eventKey="link-1" href="/iPad">iPad</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-2">Macbook</Nav.Link>
+          <Nav.Link eventKey="link-2" href="/Macbook">Macbook</Nav.Link>
         </Nav.Item>
       </Nav>
 
