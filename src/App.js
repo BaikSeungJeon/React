@@ -1,11 +1,12 @@
 import { Nav, Container, Row, Col } from 'react-bootstrap'
 import {useState} from 'react'
 import './App.css';
+import products from './products';
 
 
 function App() {
 
-  let [product] = useState();
+  let [apple] = useState(products);
 
   return (
     <div className="App">
@@ -27,15 +28,18 @@ function App() {
         <div className='row'>
           <div className='col'>
             <img src='img/iphone.png'/>
-            <h3>iPhone 13 Pro Max</h3>
+            <h3>{apple[0].title}</h3>
+            <p>{apple[0].price}</p>
           </div>
           <div className='col'>
             <img src='img/ipad.png'/>
-            <h3>iPad Air 5</h3>
+            <h3>{apple[1].title}</h3>
+            <p>{apple[1].price}</p>
           </div>
           <div className='col'>
             <img src='img/macbook.png'/>
-            <h3>Macbook PRO 14</h3>
+            <h3>{apple[2].title}</h3>
+            <p>{apple[2].price}</p>
           </div>
         </div>
       </div>
