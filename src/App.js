@@ -26,25 +26,23 @@ function App() {
 
       <div className='container'>
         <div className='row'>
-          <div className='col'>
-            <img src='img/iphone.png'/>
-            <h3>{apple[0].title}</h3>
-            <p>{apple[0].price}</p>
-          </div>
-          <div className='col'>
-            <img src='img/ipad.png'/>
-            <h3>{apple[1].title}</h3>
-            <p>{apple[1].price}</p>
-          </div>
-          <div className='col'>
-            <img src='img/macbook.png'/>
-            <h3>{apple[2].title}</h3>
-            <p>{apple[2].price}</p>
-          </div>
+          <appleProduct apple={apple[0]}/>
+          <appleProduct apple={apple[1]}/>
+          <appleProduct apple={apple[2]}/>
         </div>
       </div>
     </div>
   );
+}
+
+function appleProduct(props) {
+  return (
+    <div className='col'>
+      <img src='img/apple1.png'/>
+      <h3>{props.apple.title}</h3>
+      <p>{props.apple.price}</p>
+    </div>
+  )
 }
 
 export default App;
