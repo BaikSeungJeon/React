@@ -26,19 +26,21 @@ function App() {
 
       <div className='container'>
         <div className='row'>
-          <appleProduct apple={apple[0]}/>
-          <appleProduct apple={apple[1]}/>
-          <appleProduct apple={apple[2]}/>
+          {apple.map((a, i)=>{
+            return(
+              <AppleProduct apple={apple[i]} i={i}/>
+            )
+          })}
         </div>
       </div>
     </div>
   );
 }
 
-function appleProduct(props) {
+function AppleProduct(props) {
   return (
     <div className='col'>
-      <img src='img/apple1.png'/>
+      <img src={'img/apple' + (props.i+1) + '.png'}/>
       <h3>{props.apple.title}</h3>
       <p>{props.apple.price}</p>
     </div>
