@@ -6,6 +6,7 @@ import {useState} from 'react'
 import './App.css';
 // 컴포넌트
 import Store from './pages/Store';
+import Contact from './pages/Detail';
 
 
 
@@ -20,7 +21,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Store/>}/>
-        <Route path="/contact"/>
+        <Route path="/contact" element={<Contact/>}/>
       </Routes>
     </div>
   );
