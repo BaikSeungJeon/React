@@ -1,27 +1,32 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
+let Modal = styled.div`
+  background : #000;
+  color: #fff;
+  margin: 0 auto;
+  text-align : center;
+  width: 500px;
+  height: 300px;
+`
+
 function Contact() {
 
   let [alert, setAlert] = useState(true)
   
   useEffect(() => {
-    setTimeout(()=>{
-    }, 2000)
+    setTimeout(()=>{setAlert(false)}, 2000)
   })
 
   return (
     <div>
-        <div className='container'>
-          {
+        {
             alert == true
-            ? <div className='alert alert-warning'>
+            ? <Modal>
                 2초 후 사라지는 모달
-              </div>
+              </Modal>
             : null
           }
-          
-        </div>
         <img src='img/contact.png'/>
     </div>
   )
