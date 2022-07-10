@@ -7,6 +7,7 @@ import axios from 'axios';
 import './App.css';
 // 컴포넌트
 import Store from './pages/Store';
+import Detail from './pages/Detail';
 import Contact from './pages/Contact';
 
 function App() {
@@ -17,11 +18,13 @@ function App() {
     <div className="App">
       <Nav className='nav' variant="pills">
         <Nav.Item><Nav.Link onClick={()=>{navigate('/')}}>Store</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link onClick={()=>{navigate('/detail')}}>Detail</Nav.Link></Nav.Item>
         <Nav.Item><Nav.Link onClick={()=>{navigate('/contact')}}>Contact</Nav.Link></Nav.Item>
       </Nav>
 
       <Routes>
         <Route path="/" element={<Store/>}/>
+        <Route path="/detail" element={<Detail/>}/>
         <Route path="/contact" element={<Contact/>}/>
 
         <Route path="/*" element={<>없는 페이지입니다.</>}/>
