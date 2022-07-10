@@ -2,6 +2,7 @@
 import { Nav, Container, Row, Col } from 'react-bootstrap'
 import {Routes, Route, Link, useNavigate, Outlet} from 'react-router-dom'
 import {useState} from 'react'
+import axios from 'axios';
 // css
 import './App.css';
 // 컴포넌트

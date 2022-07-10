@@ -1,11 +1,14 @@
 // 라이브러리
 import React from 'react'
 import {useState} from 'react'
+import axios from 'axios';
 // 컴포넌트
 import products from '../products';
 
+
+
 function Store() {
-    let [apple] = useState(products);
+    let [apple, setApple] = useState(products);
 
     return (
         <div>
@@ -19,6 +22,14 @@ function Store() {
                 )
                 })}
             </div>
+            <button onClick={()=>{
+                axios.get('https://codingapple1.github.io/shop/data2.json')
+                .then((data)=>{
+                    // console.log(data.data);
+                    let copy = [...apple, ...data.data];
+                    setApple(copy);
+                })
+            }}> 상품 더 보기 </button>
             </div>
         </div>
   )

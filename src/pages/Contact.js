@@ -21,13 +21,13 @@ function Contact() {
   return (
     <div>
         {
-            alert == true
-            ? <Modal>
-                2초 후 사라지는 모달
-              </Modal>
-            : null
-          }
-        <img src='img/contact.png'/>
+          alert == true
+          ? <Modal>
+              2초 후 사라지는 모달
+            </Modal>
+          : null
+        }
+        <img src='img/contact.png' style={{width: '40%'}}/>
     </div>
   )
 }
