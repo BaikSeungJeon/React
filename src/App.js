@@ -9,6 +9,7 @@ import './App.css';
 import Store from './pages/Store';
 import Detail from './pages/Detail';
 import Contact from './pages/Contact';
+import Cart from './pages/Cart';
 
 function App() {
 
@@ -19,12 +20,14 @@ function App() {
       <Nav className='nav' variant="pills">
         <Nav.Item><Nav.Link onClick={()=>{navigate('/')}}>Store</Nav.Link></Nav.Item>
         <Nav.Item><Nav.Link onClick={()=>{navigate('/detail')}}>Detail</Nav.Link></Nav.Item>
+        <Nav.Item><Nav.Link onClick={()=>{navigate('/cart')}}>Cart</Nav.Link></Nav.Item>
         <Nav.Item><Nav.Link onClick={()=>{navigate('/contact')}}>Contact</Nav.Link></Nav.Item>
       </Nav>
 
       <Routes>
         <Route path="/" element={<Store/>}/>
         <Route path="/detail" element={<Detail/>}/>
+        <Route path="/cart" element={<Cart/>}/>
         <Route path="/contact" element={<Contact/>}/>
 
         <Route path="/*" element={<>없는 페이지입니다.</>}/>
