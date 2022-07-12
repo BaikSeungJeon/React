@@ -1,7 +1,11 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 
-export default function Cart() {
+function Cart() {
+
+    let state = useSelector(( state ) => { return state})
+
   return (
     <div>
         <Table>
@@ -13,13 +17,19 @@ export default function Cart() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>iPhone</td>
-                    <td>1</td>
-                </tr>
+                {
+                    state.cart.map((a, i) =>
+                        <tr key={i}>
+                            <td>{state.cart[i].id}</td>
+                            <td>{state.cart[i].name}</td>
+                            <td>{state.cart[i].count}</td>
+                        </tr>
+                    )
+                }
             </tbody>
         </Table> 
     </div>
   )
 }
+
+export default Cart;

@@ -1,12 +1,15 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 let cart = createSlice({
-    name: 'state 이름',
-    initialState: 'state 실제 값'
+    name: 'cart',
+    initialState: [
+        {id: 0, name: 'iPhone', count: 2},
+        {id: 1, name: 'iPad', count: 1}
+    ]
 })
 
 export default configureStore({
     reducer: {
-
+        cart: cart.reducer
     }
 })
