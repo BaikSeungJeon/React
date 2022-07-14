@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { addCount } from '../store.js'
+import { addCount, removeCount } from '../store.js'
 
 function Cart() {
 
@@ -16,7 +16,7 @@ function Cart() {
                     <th>No</th>
                     <th>상품명</th>
                     <th>수량</th>
-                    <th>버튼</th>
+                    <th>개수</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,9 +26,14 @@ function Cart() {
                             <td>{state.cart[i].id}</td>
                             <td>{state.cart[i].name}</td>
                             <td>{state.cart[i].count}</td>
-                            <td><button onClick={()=>{
-                                dispatch(addCount(i))
-                            }}>+</button></td>
+                            <td>
+                                <button onClick={()=>{
+                                dispatch(addCount(state.cart[i].id))
+                            }}>+</button>
+                                <button onClick={()=>{
+                                    dispatch(removeCount(state.cart[i].id))
+                                }}>-</button>
+                            </td>
                         </tr>
                     )
                 }
