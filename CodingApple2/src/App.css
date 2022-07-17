@@ -1,0 +1,24 @@
+.nav {
+  padding: 20px;
+}
+.home-bg {
+  height: 300px;
+  margin: 0 auto;
+  background-image: url('../public/img/bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.col {
+  width: 33%;
+  text-align: center;
+}
+.col img {
+  width: 80%;
+  height: 300px;
+  margin: 0 auto;
+}
